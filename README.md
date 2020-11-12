@@ -1,4 +1,4 @@
-# iaw-practica-02
+# iaw-practica-03
 Práctica dos de la asignatura IAW de 2º de Asir.
 
 > IES Celia Viñas (Almería) - Curso 2020/2021
@@ -30,5 +30,6 @@ GRANT ALL PRIVILEGES ON lamp_db.* TO 'lamp_user'@'%';`
 Desde la terminal de la máquina front_end, usaremos la línea `mysql -u lamp_user -plamp_password -h 172.31.88.192` y ya tendremos el acceso por vía interna asegurado. Es importante no dejar espacio entre -p y la contraseña.`
 
 Para finalizar, probaremos a conectarnos desde la aplicación web. Si todo funciona bien, podemos introducir los datos desde la web y recibiremos un mensaje `Data added successfully`, pudiendo ir más allá y revisar las tablas mysql con los comandos correspondientes.
-
 ![](/images/2.png)
+
+Nota: La IP en las imágenes difieren por un pequeño error que me obligó a crear una nueva instancia para la máquina front_end. Corregido con nueva imagen.
