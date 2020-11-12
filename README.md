@@ -32,4 +32,4 @@ Desde la terminal de la máquina front_end, usaremos la línea `mysql -u lamp_us
 Para finalizar, probaremos a conectarnos desde la aplicación web. Si todo funciona bien, podemos introducir los datos desde la web y recibiremos un mensaje `Data added successfully`, pudiendo ir más allá y revisar las tablas mysql con los comandos correspondientes.
 ![](/images/2.png)
 
-Nota: La IP en las imágenes difieren por un pequeño error que me obligó a crear una nueva instancia para la máquina front_end
+Nota: La IP en las imágenes difieren por un pequeño error que me obligó a crear una nueva instancia para la máquina front_end. Corregido con nueva imagen.
