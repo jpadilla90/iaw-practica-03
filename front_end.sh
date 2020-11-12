@@ -5,8 +5,7 @@
 HTTPASSWD_DIR=/home/ubuntu
 HTTPASSWD_USER=usuario
 HTTPASSWD_PASSWD=usuario
-# Establecemos la contraseña para root
-DB_ROOT_PASSWD=root
+
 # IP del Servidor MySQL que debermos cambiar a menudo.
 IPPRIVADA=172.31.88.192
 
