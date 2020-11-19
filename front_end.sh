@@ -81,7 +81,9 @@ rm -rf phpMyAdmin-5.0.4-all-languages.zip
 # Movemos el directorio de phpMyAdmin al directorio /var/www/html
 mv phpMyAdmin-5.0.4-all-languages/ /var/www/html/phpmyadmin
 # Copiamos nuestra configuración a la de phpmyadmin
-cp config.inc.php /var/www/html/phpmyadmin
+cp config.inc.php /var/www/html/phpmyadmin/
+# Nos aseguramos de que se aplica la variable
+sed -i "s/localhost/$IP_PRIVADA/" /var/www/html/phpmyadmin/config.php
 # Cambiamos permisos de /var/www/html
 cd /var/www/html
 chown www-data:www-data * -R
