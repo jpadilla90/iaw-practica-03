@@ -7,7 +7,7 @@ HTTPASSWD_USER=usuario
 HTTPASSWD_PASSWD=usuario
 
 # IP del Servidor MySQL que debermos cambiar a menudo.
-IPPRIVADAMYSQL=172.31.88.192
+IP_PRIVADA=172.31.88.192
 
 # ------------------------------------------------------------------------------ Instalación de Apache ------------------------------------------------------------------------------ 
 # Habilitamos el modo de shell para mostrar los comandos que se ejecutan
@@ -30,7 +30,7 @@ git clone https://github.com/josejuansanchez/iaw-practica-lamp
 mv /var/www/html/iaw-practica-lamp/src/*  /var/www/html/
 
 # Configuramos el archivo php de la aplicacion. En https://linuxhint.com/bash_sed_examples/ podemos leer sobre las especificaciones del comando sed y el operador -i, que reemplazarán la línea. Ojo a las comillas, tienen que ser dobles.
-sed -i "s/localhost/$IPPRIVADAMYSQL/" /var/www/html/config.php
+sed -i "s/localhost/$IP_PRIVADA/" /var/www/html/config.php
 
 # Eliminamos el archivo Index.html de apache
 rm -rf /var/www/html/index.html
@@ -89,7 +89,7 @@ cd /var/www/html/phpmyadmin
 mv config.sample.inc.php config.inc.php
 
 # Modificamos el archivo config.inc.php para que podamos conectarnos a la ip privada del backend
-sed -i "s/localhost/$IP_PRIVADA_MYSQL/" /var/www/html/phpmyadmin/config.inc.php
+sed -i "s/localhost/$IP_PRIVADA/" /var/www/html/phpmyadmin/config.inc.php
 
 # Cambiamos permisos de /var/www/html
 cd /var/www/html
