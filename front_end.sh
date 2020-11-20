@@ -6,9 +6,8 @@ HTTPASSWD_DIR=/home/ubuntu
 HTTPASSWD_USER=usuario
 HTTPASSWD_PASSWD=usuario
 
-# IP del Servidor MySQL que debermos cambiar a menudo.
-IP_PRIVADA=172.31.88.192
-
+### IP del Servidor MySQL. ¡Hay que ajustarla cada vez que se cambia el servidor!
+IP_PRIVADA=
 # ------------------------------------------------------------------------------ Instalación de Apache ------------------------------------------------------------------------------ 
 # Habilitamos el modo de shell para mostrar los comandos que se ejecutan
 set -x
