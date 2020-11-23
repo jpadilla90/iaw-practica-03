@@ -8,8 +8,6 @@ HTTPASSWD_PASSWD=usuario
 
 ### IP del Servidor MySQL. ¡Hay que ajustarla cada vez que se cambia el servidor!
 IP_PRIVADA=
-# Generamos un password para la configuración de phpMyAdmin, blowfish_secret.
-BLOWFISH=`tr -dc A-Za-z0-9 < /dev/urandom | head -c 64`
 # ------------------------------------------------------------------------------ Instalación de Apache ------------------------------------------------------------------------------ 
 # Habilitamos el modo de shell para mostrar los comandos que se ejecutan
 set -x
@@ -19,7 +17,7 @@ apt upgrade -y
 # Instalamos el servidor web Apache
 apt install apache2 -y
 # Instalamos los módulos necesarios de PHP
-apt install php libapache2-mod-php php-mysql php-mbstring -y
+apt install php libapache2-mod-php php-mysql -y
 
 # ------------------------------------------------------------------------------ Instalación aplicación web ------------------------------------------------------------------------------ 
 # Clonamos el repositorio de la aplicación
@@ -89,9 +87,9 @@ cd /var/www/html/phpmyadmin
 # Cambiamos el nombre del archivo 
 mv config.sample.inc.php config.inc.php
 
-# Modificamos el archivo config.inc.php para que podamos conectarnos a la ip privada del backend. Adicionalmente, añadimos una contraseña aleatoria de 32 caracteres a la variable "blowfish_secret"
+# Modificamos el archivo config.inc.php para que podamos conectarnos a la ip privada del backend
 sed -i "s/localhost/$IP_PRIVADA/" /var/www/html/phpmyadmin/config.inc.php
-sed -i "s/localhost/$BLOWFISH/" /var/www/html/phpmyadmin/config.inc.php
+
 # Cambiamos permisos de /var/www/html
 cd /var/www/html
 chown www-data:www-data * -R
