@@ -17,7 +17,7 @@ apt upgrade -y
 # Instalamos el servidor web Apache
 apt install apache2 -y
 # Instalamos los módulos necesarios de PHP
-apt install php libapache2-mod-php php-mysql -y
+apt install php libapache2-mod-php php-mysql php-mbstring -y
 
 # ------------------------------------------------------------------------------ Instalación aplicación web ------------------------------------------------------------------------------ 
 # Clonamos el repositorio de la aplicación
