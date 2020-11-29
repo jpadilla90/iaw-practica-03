@@ -8,6 +8,8 @@ HTTPASSWD_PASSWD=usuario
 
 ### IP del Servidor MySQL. ¡Hay que ajustarla cada vez que se cambia el servidor!
 IP_PRIVADA=
+### Contraseña aleatoria para el parámetro blowfish_secret de nuestro config.inc.php
+BLOWFISH=`tr -dc A-Za-z0-9 < /dev/urandom | head -c 64`
 # ------------------------------------------------------------------------------ Instalación de Apache ------------------------------------------------------------------------------ 
 # Habilitamos el modo de shell para mostrar los comandos que se ejecutan
 set -x
@@ -80,15 +82,20 @@ rm -rf phpMyAdmin-5.0.4-all-languages.zip
 # Movemos el directorio de phpMyAdmin al directorio /var/www/html
 mv phpMyAdmin-5.0.4-all-languages/ /var/www/html/phpmyadmin
 
+######METODO VIEJO######
 # Configuramos el archivo config.inc.php de phpMyAdmin #
 # Nos situamos en el directorio /var/www/html/phpmyadmin
-cd /var/www/html/phpmyadmin
-
+#cd /var/www/html/phpmyadmin
 # Cambiamos el nombre del archivo 
-mv config.sample.inc.php config.inc.php
-
+# mv config.sample.inc.php config.inc.php
 # Modificamos el archivo config.inc.php para que podamos conectarnos a la ip privada del backend
-sed -i "s/localhost/$IP_PRIVADA/" /var/www/html/phpmyadmin/config.inc.php
+# sed -i "s/localhost/$IP_PRIVADA/" /var/www/html/phpmyadmin/config.inc.php
+# Descartado el método en favor de hacer un cp del archivo de configuración al tener que introducir diferentes parámetros
+######/METODO VIEJO######
+
+# Sustituimos el archivo de configuración de PHP por el nuestro, que contiene las variables necesarias para automatizarlo
+cd /home/ubuntu
+cp config.inc.php /var/www/html/phpmyadmin/config.inc.php
 
 # Cambiamos permisos de /var/www/html
 cd /var/www/html
