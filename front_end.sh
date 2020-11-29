@@ -33,7 +33,6 @@ mv /var/www/html/iaw-practica-lamp/src/*  /var/www/html/
 
 # Configuramos el archivo php de la aplicacion. En https://linuxhint.com/bash_sed_examples/ podemos leer sobre las especificaciones del comando sed y el operador -i, que reemplazarán la línea. Ojo a las comillas, tienen que ser dobles.
 sed -i "s/localhost/$IP_PRIVADA/" /var/www/html/config.php
-sed -i "s/localhost/$IP_PRIVADA/" /var/www/html/config.php
 
 # Eliminamos el archivo Index.html de apache
 rm -rf /var/www/html/index.html
