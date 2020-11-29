@@ -93,15 +93,13 @@ mv phpMyAdmin-5.0.4-all-languages/ /var/www/html/phpmyadmin
 # Descartado el método en favor de hacer un cp del archivo de configuración al tener que introducir diferentes parámetros
 ######/METODO VIEJO######
 
-# Cambiamos permisos de /var/www/html
-cd /var/www/html
-chown www-data:www-data * -R
-
 # Sustituimos el archivo de configuración de PHP por el nuestro, que contiene las variables necesarias para automatizarlo
 cd /home/ubuntu
 cp config.inc.php /var/www/html/phpmyadmin/config.inc.php
 
-
+# Cambiamos permisos de /var/www/html
+cd /var/www/html
+chown www-data:www-data * -R
 
 # Copiamos el archivo de configuracion de apache
 cp /home/ubuntu/000-default.conf /etc/apache2/sites-available/
