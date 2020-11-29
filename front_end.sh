@@ -86,11 +86,10 @@ mv phpMyAdmin-5.0.4-all-languages/ /var/www/html/phpmyadmin
 # Configuramos el archivo config.inc.php de phpMyAdmin 
 # Nos situamos en el directorio /var/www/html/phpmyadmin
 cd /var/www/html/phpmyadmin
-# Cambiamos el nombre del archivo 
+# Cambiamos el nombre del archivo. 
 mv config.sample.inc.php config.inc.php
 sed -i "s/localhost/$IP_PRIVADA/" /var/www/html/phpmyadmin/config.inc.php
-sed -i "s/blowfish_secret/$BLOWFISH/" /var/www/html/phpmyadmin/config.inc.php
-
+sed -i "s/'blowfish_secret'] = '';/'blowfish_secret'] = '$BLOWFISH';/" /var/www/html/phpmyadmin/config.inc.php
 # Cambiamos permisos de /var/www/html
 cd /var/www/html
 chown www-data:www-data * -R
