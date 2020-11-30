@@ -34,3 +34,9 @@ Para finalizar, probaremos a conectarnos desde la aplicación web. Si todo funci
 
 También deberá funcionar correctamente PHPYMYADMIN, como en el ejemplo. http://54.175.231.117/phpmyadmin/
 ![](/images/3.png)
+
+**¿Algo falla? Sospechosos habituales**
+Hay varios archivos que deberemos comprobar que han cogido correctamente las variables introducidas, sea por sed o funcionamiento básico.
+
+/var/www/html/config.php
+/var/www/html/phpmyadmin/config.inc.php
